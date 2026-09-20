@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FuwupaidanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FuwupaidanEntity" id="fuwupaidanMap">
+        <result property="paidanbianhao" column="paidanbianhao"/>
+        <result property="fuwumingcheng" column="fuwumingcheng"/>
+        <result property="fuwuleixing" column="fuwuleixing"/>
+        <result property="fuwushijian" column="fuwushijian"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="xiaoshijiage" column="xiaoshijiage"/>
+        <result property="fuwushizhang" column="fuwushizhang"/>
+        <result property="zongjine" column="zongjine"/>
+        <result property="fangzhuzhanghao" column="fangzhuzhanghao"/>
+        <result property="fangzhuxingming" column="fangzhuxingming"/>
+        <result property="dizhi" column="dizhi"/>
+        <result property="gongsizhanghao" column="gongsizhanghao"/>
+        <result property="gongsimingcheng" column="gongsimingcheng"/>
+        <result property="fuzeren" column="fuzeren"/>
+        <result property="jiazhengzhanghao" column="jiazhengzhanghao"/>
+        <result property="jiazhengxingming" column="jiazhengxingming"/>
+        <result property="paidanshijian" column="paidanshijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FuwupaidanVO" >
+		SELECT * FROM fuwupaidan  fuwupaidan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FuwupaidanVO" >
+		SELECT  fuwupaidan.* FROM fuwupaidan  fuwupaidan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FuwupaidanView" >
+
+		SELECT  fuwupaidan.* FROM fuwupaidan  fuwupaidan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FuwupaidanView" >
+		SELECT * FROM fuwupaidan  fuwupaidan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
